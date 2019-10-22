@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.Controller">
+  <children>
+    <Button layoutX="58.0" layoutY="147.0" mnemonicParsing="false" onAction="#handlerButtonAction_vender2" prefHeight="106.0" prefWidth="210.0" text="Vender">
+      <font>
+        <Font name="Gadugi" size="25.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Button defaultButton="false" layoutX="453.0" layoutY="316.0" mnemonicParsing="false" onAction="#handlerButtonAction_logout" prefHeight="70.0" prefWidth="133.0" text="Logout" textAlignment="CENTER" underline="false" wrapText="true">
+      <font>
+        <Font name="Gadugi" size="20.0" />
+      </font>
+    </Button>
+    <Button font="$x1" layoutX="339.0" layoutY="147.0" mnemonicParsing="false" onAction="#handlerButtonAction_pesquisar2" prefHeight="106.0" prefWidth="210.0" text="Pesquisar no estoque" textAlignment="CENTER" wrapText="true" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="StockControll">
+  <children>
+    <TextField layoutX="20.0" layoutY="39.0" prefWidth="183.95733642578125" promptText="0129288" />
+    <Text fontSmoothingType="LCD" layoutX="72.0" layoutY="31.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="ID DO PRODUTO">
+      <font>
+        <Font name="Gadugi" size="10.0" fx:id="x1" />
+      </font>
+    </Text>
+    <TextField layoutX="224.0" layoutY="39.0" prefWidth="92.09323120117188" promptText="01" />
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="245.0" layoutY="31.0" scaleX="2.0675890016264233" scaleY="1.8014847637461033" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" />
+    <Button layoutX="348.0" layoutY="24.0" minHeight="21.56475830078125" mnemonicParsing="false" prefHeight="37.0" prefWidth="107.0" text="Inserir">
+      <font>
+        <Font name="Gadugi" size="16.0" fx:id="x2" />
+      </font>
+    </Button>
+    <TextArea editable="false" layoutX="18.0" layoutY="75.0" prefHeight="206.0" prefWidth="556.0" promptText="0129288     Produto XX    01    R$10,00" wrapText="true" />
+    <ScrollBar layoutX="574.0" layoutY="75.0" orientation="VERTICAL" prefHeight="206.0" />
+    <TextArea editable="false" layoutX="143.0" layoutY="288.0" prefHeight="37.0" prefWidth="431.0" promptText="R$ 10,00" text="" wrapText="true" />
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="66.0" layoutY="310.0" scaleX="3.330495173660439" scaleY="2.9103819295584286" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL" />
+    <Button font="$x2" layoutX="20.0" layoutY="331.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="141.0" text="Limpar" />
+    <Button font="$x2" layoutX="433.0" layoutY="331.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="141.0" text="Finalizar" />
+    <Button font="$x2" layoutX="513.0" layoutY="24.0" minHeight="21.56475830078125" mnemonicParsing="false" onAction="#handlerButtonAction_voltar" prefHeight="37.0" prefWidth="73.0" text="Voltar" />
+  </children>
+</AnchorPane>

@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
 //scene1    -   tela login
 //scene2    -   menu principal
@@ -33,6 +34,8 @@ public class StockControll {
     private TextField input_user_login;
     @FXML
     private TextField input_user_password;
+    @FXML
+    private TextArea textarea_relatorio;
 
 
     @FXML
@@ -192,7 +195,9 @@ public class StockControll {
     }
 
     public void showLog() {
-
+        textarea_relatorio.insertText(0,"teste\n");
+        textarea_relatorio.insertText(0,"teste\n");
+        textarea_relatorio.insertText(0,"teste\n");
     }
 
     public void manageUser() {

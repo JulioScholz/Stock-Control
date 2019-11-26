@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="StockControll">
   <children>
-    <TextField layoutX="14.0" layoutY="38.0" prefWidth="200.0" promptText="Digite o id ou nome e sobrenome" />
+    <TextField id="input_pesquisar" layoutX="14.0" layoutY="38.0" prefWidth="200.0" promptText="Digite o id ou nome e sobrenome" />
     <Button layoutX="214.0" layoutY="38.0" mnemonicParsing="false" text="Pesquisar">
       <font>
         <Font name="Gadugi" size="12.0" />
@@ -20,32 +20,32 @@
         <Font name="Gadugi" size="10.0" fx:id="x1" />
       </font>
     </Text>
-    <TextField layoutX="25.0" layoutY="106.0" prefWidth="200.0" />
+    <TextField id="input_nome" layoutX="25.0" layoutY="106.0" prefWidth="200.0" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="99.0" layoutY="98.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
-    <TextField layoutX="250.0" layoutY="106.0" prefWidth="200.0" />
+    <TextField id="input_sobrenome" layoutX="250.0" layoutY="106.0" prefWidth="200.0" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="323.0" layoutY="98.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Sobrenome:" />
-    <TextField layoutX="481.0" layoutY="106.0" prefWidth="105.0" />
+    <TextField id="input_id" layoutX="481.0" layoutY="106.0" prefWidth="105.0" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="519.0" layoutY="98.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
-    <TextField layoutX="25.0" layoutY="164.0" prefWidth="200.0" />
+    <TextField id="input_funcao" layoutX="25.0" layoutY="164.0" prefWidth="200.0" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="99.0" layoutY="156.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Função:" />
-    <TextField layoutX="271.0" layoutY="163.0" prefWidth="47.0" promptText="00" />
+    <TextField id="input_dianasc" layoutX="271.0" layoutY="163.0" prefWidth="47.0" promptText="00" />
     <Text fontSmoothingType="LCD" layoutX="263.0" layoutY="157.0" scaleX="1.6768980007200174" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Dia Nascimento">
       <font>
         <Font name="Gadugi" size="9.0" fx:id="x2" />
       </font>
     </Text>
-    <TextField  layoutX="391.0" layoutY="164.0" prefWidth="47.0" promptText="00" />
+    <TextField id="input_mesnasc" layoutX="391.0" layoutY="164.0" prefWidth="47.0" promptText="00" />
     <Text font="$x2" fontSmoothingType="LCD" layoutX="381.0" layoutY="157.0" scaleX="1.5805518583884757" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Mês Nascimento" />
     <Text font="$x2" fontSmoothingType="LCD" layoutX="495.0" layoutY="157.0" scaleX="1.60702051879765" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Ano Nascimento" />
-    <TextField layoutX="504.0" layoutY="163.0" prefWidth="47.0" promptText="00" />
+    <TextField id="input_anonasc" layoutX="504.0" layoutY="163.0" prefWidth="47.0" promptText="00" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="116.0" layoutY="219.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:" />
-    <TextField layoutX="25.0" layoutY="227.0" prefWidth="200.0" promptText="00000000000" />
+    <TextField id="input_cpf" layoutX="25.0" layoutY="227.0" prefWidth="200.0" promptText="00000000000" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="359.0" layoutY="219.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="RG:" />
-    <TextField alignment="CENTER_LEFT" layoutX="267.0" layoutY="227.0" prefWidth="200.0" promptText="000000000" />
+    <TextField id="input_rg" alignment="CENTER_LEFT" layoutX="267.0" layoutY="227.0" prefWidth="200.0" promptText="000000000" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="100.0" layoutY="286.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário:" />
-    <TextField layoutX="18.0" layoutY="294.0" prefWidth="200.0" />
+    <TextField id="input_usuario" layoutX="18.0" layoutY="294.0" prefWidth="200.0" />
     <Text font="$x1" fontSmoothingType="LCD" layoutX="358.0" layoutY="288.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" />
-    <TextField layoutX="273.0" layoutY="294.0" prefWidth="200.0" />
+    <TextField id="input_senha" layoutX="273.0" layoutY="294.0" prefWidth="200.0" />
     <Button layoutX="178.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="106.0303955078125" text="EDITAR">
       <font>
         <Font name="Gadugi" size="16.0" fx:id="x3" />

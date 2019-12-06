@@ -1,55 +1,69 @@
+package sample;
+
 public class User {
 
-	protected String id;
+    protected String id;
 
-	protected String nome;
+    protected String nome;
 
-	protected String sobrenome;
+    protected String sobrenome;
 
-	protected String funcao;
+    protected String funcao;
 
-	protected int diaNasc;
+    protected int diaNasc;
 
-	protected int mesNasc;
+    protected int mesNasc;
 
-	protected int anoNasc;
+    protected int anoNasc;
 
-	protected int cpf;
+    protected int cpf;
 
-	protected int rg;
+    protected int rg;
 
-	protected String nomeDeUsuario;
+    protected String nomeDeUsuario;
 
-	protected String senha;
+    protected String senha;
 
-	protected int acesso;
+    protected int acesso;
 
-	private Stock stock;
+    private Stock stock;
 
-	private User_Manager users;
+    private User_Manager users;
 
-	public User(String name, Stock stock) {
-
-	}
-
-    public User() {
+    public User(String name, Stock stock) {
 
     }
 
-	public boolean login(String name, String password) {
-		return false;
-	}
+    public User(String usuario, String _senha, int _acesso) {
+        nomeDeUsuario = usuario;
+        senha = _senha;
+        acesso = _acesso;
+    }
 
-	public void logout() {
+    public String getNomeDeUsuario(){
+        return nomeDeUsuario;
+    }
+    public String getSenha(){
+        return senha;
+    }
+    public int getAcesso(){
+        return acesso;
+    }
 
-	}
+    public boolean login(String name, String password) {
+        return false;
+    }
 
-	public boolean sell() {
-		return false;
-	}
+    public void logout() {
 
-	public boolean restock(int prod_code) {
-		return false;
-	}
+    }
+
+    public boolean sell() {
+        return false;
+    }
+
+    public boolean restock(int prod_code) {
+        return false;
+    }
 
 }

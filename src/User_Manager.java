@@ -5,18 +5,15 @@ import java.util.Iterator;
 
 public class User_Manager {
 
-    private ArrayList<User> userList = new ArrayList<User>();
+    public ConnectionClass connectionClass = new ConnectionClass();
+    public Connection connection = connectionClass.getConnection();
+    public PreparedStatement myStmt = null;
+    public ResultSet myRs = null;
 
+    public void new_user(String username, String password, int tipo, String nome, String sobrenome, int cpf, int rg, String funcao) throws SQLException {
 
-    public void new_user(String username, String password, String type) {
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        PreparedStatement myStmt = null;
-        ResultSet myRs = null;
-
-        myStmt = connection.preparedStatement("INSERT INTO USERS (nome, sobrenome, funcao, nascimento, cpf, rg, username, password, level) VALUES" +
-                "(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
+        myStmt = connection.prepareStatement("INSERT INTO USERS (nome, sobrenome, funcao, nascimento, cpf, rg, user_name, password, nivel_acesso) VALUES" +
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?)");
         myStmt.setString(1, nome);
         myStmt.setString(2, sobrenome);
         myStmt.setString(3, funcao);
@@ -25,25 +22,20 @@ public class User_Manager {
         myStmt.setInt(6, rg);
         myStmt.setString(7, username);
         myStmt.setString(8, password);
-        myStmt.setInt(9, level);
+        myStmt.setInt(9, tipo);
 
-        myRs = myStmt.executeUpdate();
-
-        display(myRs);
+        myStmt.executeUpdate();
 
     }
 
-    public void delete_user(String username) {
+    public void delete_user(int cpf) throws SQLException {
+        myStmt = connection.prepareStatement("DELETE FROM USER WHERE CPF = ?");
+        myStmt.setInt(1, cpf);
 
+        myStmt.executeUpdate();
     }
-
-    public void edit_user(String username, String password, String type) {
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        PreparedStatement myStmt = null;
-        ResultSet myRs = null;
-
-        myStmt = connection.preparedStatement("UPDATE USERS SET nome = ?, sobrenome = ?, funcao, nascimento = ?" +
+    public void edit_user(String username, String password, int tipo, String nome, String sobrenome, int cpf, int rg, String funcao, int id) throws SQLException {
+        myStmt = connection.prepareStatement("UPDATE USERS SET nome = ?, sobrenome = ?, funcao, nascimento = ?" +
                 ", cpf = ?, rg = ?, username = ?, password = ?, level = ? WHERE id = ?");
 
 
@@ -55,42 +47,43 @@ public class User_Manager {
         myStmt.setInt(6, rg);
         myStmt.setString(7, username);
         myStmt.setString(8, password);
-        myStmt.setInt(9, level);
+        myStmt.setInt(9, tipo);
         myStmt.setInt(10, id);
 
-        myRs = myStmt.executeUpdate();
-
-        display(myRs);
+        myStmt.executeUpdate();
     }
 
-    /*** a busca tem que ser pelo cpf, por tem de ser uma chave única para a busca e o username pode ser mutável*/                                            
-    public boolean search_user(int cpf) {
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        PreparedStatement myStmt = null;
-        ResultSet myRs = null;
-
-        myStmt = connection.preparedStatement("SELECT * FROM users WHERE cpf = ?");
+    public boolean search_user(int cpf) throws SQLException {
+        myStmt = connection.prepareStatement("SELECT * FROM users WHERE cpf = ?");
 
         myStmt.setInt(1, cpf);
 
         myRs = myStmt.executeQuery();
 
-        if (myRs){
+        if (myRs.next()){
             return true;
         }
 
-        return false;
+        final boolean b = false;
+        return b;
     }
 
-    public User_Manager() {
-        User user = new User("user", "user", 5);
-        User adm = new User("admin", "admin", 4);
-        userList.add(adm);
-        userList.add(user);
-    }
+    public boolean authenticate(String user_name, String password) {
 
-    public int authenticate(String name, String password) {
+        myStmt = connection.prepareStatement("SELECT * user WHERE (user_name = ?, password = ?");
+
+        myStmt.setString(1, nome);
+        myStmt.setString(2, password);
+
+        myRs = myStmt.executeQuery();
+
+        if (myRs.next()){
+            return true;
+        }
+
+        final boolean b = false;
+        return b;
+        /**
         Iterator<User> itr = userList.iterator();
 
         while(itr.hasNext()){
@@ -104,8 +97,8 @@ public class User_Manager {
             }
         }
         return 2;
+         */
     }
-
 
 }
 

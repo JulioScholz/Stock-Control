@@ -1,6 +1,6 @@
-package sample;
+
 import java.sql.*;
-import Connection.ConnectionClass;
+import Connectivity.ConnectionClass;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -30,7 +30,7 @@ public class Stock {
          */
     }
 
-    public void new_product(String name, int code, int initial_qty, int custo, int preco, boolean perecivel, String fornecedor, String lote, String localizacao) {
+    public void new_product(String name, int code, int initial_qty, int custo, int preco, boolean perecivel, String fornecedor, String lote, String localizacao) throws SQLException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
         PreparedStatement myStmt = null;
@@ -54,13 +54,14 @@ public class Stock {
         myStmt.executeUpdate();
     }
 
-    public void update_qty(String product,  int new_qty) {
+    public void update_qty(String product,  int new_qty) throws SQLException {
 
          myStmt = connection.prepareStatement("UPDATE produtos SET quantidade = ? WHERE id = ?");
 
          myStmt.setInt(1, new_qty);
-         myStmt.setInt(2, product);
+         myStmt.setInt(2, Integer.parseInt(product));
          myStmt.executeUpdate();
+
         /**
         Iterator<Product> itr = productList.iterator();
 
@@ -78,7 +79,7 @@ public class Stock {
          */
     }
 
-    public boolean search(int codigo) {
+    public boolean search(int codigo) throws SQLException {
 
         myStmt = connection.prepareStatement("SELECT * FROM produtos WHERE cpf = ?");
 

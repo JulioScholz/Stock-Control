@@ -1,5 +1,3 @@
-package sample;
-
 import java.awt.*;
 import java.io.IOException;
 import javafx.event.ActionEvent;
@@ -15,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import sun.java2d.opengl.WGLSurfaceData;
 import java.lang.String;
+import java.sql.SQLException;
 
 //scene1    -   tela login
 //scene2    -   menu principal
@@ -79,7 +78,7 @@ public class StockControll {
     private TextArea registroVendas2;
 
     @FXML
-    private void handlerButtonAction_login(ActionEvent event) throws IOException{
+    private void handlerButtonAction_login(ActionEvent event) throws IOException, SQLException {
         showLoginScreen(event);
     }
 
@@ -189,7 +188,7 @@ public class StockControll {
         app_stage.show();
     }
     @FXML
-    private void handlerButtonAction_inserirProduto(ActionEvent event) throws IOException{
+    private void handlerButtonAction_inserirProduto(ActionEvent event) throws IOException, SQLException {
         updateStock();
     }
     @FXML
@@ -207,7 +206,7 @@ public class StockControll {
         registroVendas2.setText("");
     }
 
-    public void updateStock() {
+    public void updateStock() throws SQLException {
         mensagemID1.setText("");
         mensagemqty1.setText("");
 
@@ -215,7 +214,7 @@ public class StockControll {
             mensagemID1.setText("ID do produto não preenchido");
         else if(qtyProduct1.getText().trim().isEmpty())
             mensagemqty1.setText("Quantidade não preenchida");
-        else{
+        else{/*
             int qty = Integer.parseInt(qtyProduct1.getText());
             Product produto = stock.update_qty(IDproduct1.getText(), qty);
             if(produto == null){
@@ -241,7 +240,7 @@ public class StockControll {
 
                 }
             }
-        }
+        */}
     }
 
     public void updateStock2(){
@@ -252,7 +251,7 @@ public class StockControll {
             mensagemID2.setText("ID do produto não preenchido");
         else if(qtyProduct2.getText().trim().isEmpty())
             mensagemqty2.setText("Quantidade não preenchida");
-        else{
+        else{/*
             int qty = Integer.parseInt(qtyProduct2.getText());
             Product produto = stock.update_qty(IDproduct2.getText(), qty);
             if(produto == null){
@@ -278,15 +277,16 @@ public class StockControll {
 
                 }
             }
-        }
+       */ }
     }
-    public int login(TextField userName, TextField password) {
+    public int login(TextField userName, TextField password) throws SQLException {
         if(userName.getText().trim().isEmpty())
             return NOUSERNAME;
         else if(password.getText().trim().isEmpty())
             return NOPASSWORD;
-        else
-            return user_Manager.authenticate(userName.getText(), password.getText());
+        else if(user_Manager.authenticate(userName.getText(), password.getText()) == true)
+            return 5;
+        return 0;
     }
 
 
@@ -313,7 +313,7 @@ public class StockControll {
 
     }
 
-    public void showLoginScreen(ActionEvent event)throws IOException {
+    public void showLoginScreen(ActionEvent event) throws IOException, SQLException {
         int retorno = login(input_user_login, input_user_password);
 
         noUserWarning.setText("");

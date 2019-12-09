@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StockControll">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StockControll">
   <children>
     <TextField id="input_id_produto" fx:id="IDproduct1" layoutX="20.0" layoutY="39.0" prefWidth="183.95733642578125" promptText="0129288" />
     <Text fontSmoothingType="LCD" layoutX="72.0" layoutY="31.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="ID DO PRODUTO">

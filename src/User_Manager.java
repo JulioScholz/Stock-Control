@@ -1,7 +1,8 @@
-package sample;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.sql.*;
+import Connectivity.ConnectionClass;
 
 public class User_Manager {
 
@@ -68,11 +69,11 @@ public class User_Manager {
         return b;
     }
 
-    public boolean authenticate(String user_name, String password) {
+    public boolean authenticate(String user_name, String password) throws SQLException {
 
         myStmt = connection.prepareStatement("SELECT * user WHERE (user_name = ?, password = ?");
 
-        myStmt.setString(1, nome);
+        myStmt.setString(1, user_name);
         myStmt.setString(2, password);
 
         myRs = myStmt.executeQuery();

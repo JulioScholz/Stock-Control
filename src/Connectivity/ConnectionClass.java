@@ -1,18 +1,20 @@
 package Connectivity;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class ConnectionClass {
-    public Connection getConnection(){
+    Connection connection;
+    public Connection getConnection() {
 
-        String dbName="stockmarket";
-        String userName="root";
-        String password="";
+        String dbName = "stockmarket";
+        String userName = "root";
+        String password = "";
 
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/"+dbName,userName,password);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/" + dbName, userName, password);
 
 
         } catch (Exception e) {
@@ -21,4 +23,5 @@ public class ConnectionClass {
 
 
         return connection;
+    }
 }

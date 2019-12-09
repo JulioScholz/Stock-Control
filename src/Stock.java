@@ -1,16 +1,22 @@
 package sample;
-
+import java.sql.*;
+import Connection.ConnectionClass;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Stock {
+    public ConnectionClass connectionClass = new ConnectionClass();
+    public Connection connection = connectionClass.getConnection();
+    public PreparedStatement myStmt = null;
+    public ResultSet myRs = null;
 
-    private ArrayList<Product> productList = new ArrayList<Product>();
+    ///private ArrayList<Product> productList = new ArrayList<Product>();
 
     //isso esta correto?
     //private StockControl stockControl;
 
     public Stock() {
+        /***
         Product coca = new Product("B001", "Coca-Cola", 10, 2.50f);
         Product guarana = new Product("B002", "Guaraná", 10, 2.60f);
         Product arroz = new Product("B003", "Arroz 1KG", 10, 3.00f);
@@ -21,22 +27,23 @@ public class Stock {
         productList.add(feijao);
         productList.add(arroz);
         productList.add(tictac);
+         */
     }
 
-    public void new_product(String name, int code, int initial_qty) {
+    public void new_product(String name, int code, int initial_qty, int custo, int preco, boolean perecivel, String fornecedor, String lote, String localizacao) {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
         PreparedStatement myStmt = null;
         ResultSet myRs = null;
 
-        myStmt = connection.preparedStatement("INSERT INTO PRODUCTS (nome, code, quantidade, custo, preco, " +
+        myStmt = connection.prepareStatement("INSERT INTO produtos (nome, code, quantidade, custo, preco, " +
                 "dataentrada, perecivel, fornecedor, lote, localizacao, dataValidade) VALUES (? ,? ,? ,? ,?, ?, ?, ?, ?, ?, ?)");
 
         myStmt.setString(1, name);
         myStmt.setInt(2, code);
         myStmt.setInt(3, initial_qty);
-        myStmt.setDouble(4, custo);
-        myStmt.setDouble(5, preco);
+        myStmt.setInt(4, custo);
+        myStmt.setInt(5, preco);
         myStmt.setDate(6, java.sql.Date.valueOf(java.time.LocalDate.now()));
         myStmt.setBoolean(7, perecivel);
         myStmt.setString(8, fornecedor);
@@ -44,27 +51,17 @@ public class Stock {
         myStmt.setString(10, localizacao);
         myStmt.setDate(11, java.sql.Date.valueOf(java.time.LocalDate.now()));
 
-        myRs = myStmt.executeUpdate();
-
-        display(myRs);
+        myStmt.executeUpdate();
     }
 
-    public Product update_qty(String product,  int _qty) {
-        /***
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
-        PreparedStatement myStmt = null;
-        ResultSet myRs = null;
+    public void update_qty(String product,  int new_qty) {
 
-        myStmt = connection.preparedStatement("UPDATE PRODUCTS SET quantidade = ? WHERE id = ?");
+         myStmt = connection.prepareStatement("UPDATE produtos SET quantidade = ? WHERE id = ?");
 
-        myStmt.setInt(1, new_qty);
-        myStmt.setInt(2, product);
-        myRs = myStmt.executeUpdate();
-        
-        
-        
-        */
+         myStmt.setInt(1, new_qty);
+         myStmt.setInt(2, product);
+         myStmt.executeUpdate();
+        /**
         Iterator<Product> itr = productList.iterator();
 
         while(itr.hasNext()) {
@@ -78,19 +75,23 @@ public class Stock {
             }
         }
         return null;
+         */
     }
 
-    public boolean search() {
-        ConnectionClass connectionClass = new ConnectionClass();
-        Connection connection = connectionClass.getConnection();
+    public boolean search(int codigo) {
 
-        private String sql = "SELECT * FROM products WHERE cpf=" + cpf + ";";
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(sql);
-        if (resultSet){
+        myStmt = connection.prepareStatement("SELECT * FROM produtos WHERE cpf = ?");
+
+        myStmt.setInt(1, codigo);
+
+        myRs = myStmt.executeQuery();
+
+        if (myRs.next()){
             return true;
         }
-        return false;
+
+        final boolean b = false;
+        return b;
     }
 
     public void log_report() {

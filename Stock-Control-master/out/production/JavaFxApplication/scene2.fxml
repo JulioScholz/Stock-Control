@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.StockControll">
+  <children>
+    <Button layoutX="69.0" layoutY="101.0" mnemonicParsing="false" onAction="#handlerButtonAction_pesquisar" prefHeight="61.0" prefWidth="119.0" text="Pesquisar no Estoque" textAlignment="CENTER" wrapText="true">
+      <font>
+        <Font name="Gadugi" size="15.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Button font="$x1" layoutX="241.0" layoutY="101.0" mnemonicParsing="false" onAction="#handlerButtonAction_vender" prefHeight="61.0" prefWidth="119.0" text="Vender" textAlignment="CENTER" wrapText="true" />
+    <Button font="$x1" layoutX="424.0" layoutY="101.0" mnemonicParsing="false" onAction="#handlerButtonAction_relatorio" prefHeight="61.0" prefWidth="119.0" text="Gerar Relatório" textAlignment="CENTER" wrapText="true" />
+    <Button font="$x1" layoutX="69.0" layoutY="257.0" mnemonicParsing="false" onAction="#handlerButtonAction_cadastrarObj" prefHeight="61.0" prefWidth="119.0" text="Cadastrar Objeto" textAlignment="CENTER" wrapText="true" />
+    <Button font="$x1" layoutX="241.0" layoutY="257.0" mnemonicParsing="false" onAction="#handlerButtonAction_cadastrarFunc" prefHeight="61.0" prefWidth="119.0" text="Cadastrar Funcionário" textAlignment="CENTER" wrapText="true" />
+    <Button defaultButton="false" font="$x1" layoutX="424.0" layoutY="257.0" mnemonicParsing="false" onAction="#handlerButtonAction_logout" prefHeight="61.0" prefWidth="119.0" text="Logout" textAlignment="CENTER" underline="false" wrapText="true" />
+  </children>
+</AnchorPane>

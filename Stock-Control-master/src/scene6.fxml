@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.StockControll">
+  <children>
+    <TextField layoutX="14.0" layoutY="51.0" prefHeight="36.0" prefWidth="321.0" promptText="000000000 ou nome_do_produto" style="" />
+    <Button layoutX="338.0" layoutY="51.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="97.0" text="BUSCAR">
+      <font>
+        <Font name="Gadugi" size="16.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Text layoutX="16.0" layoutY="46.0" scaleX="1.0095961015837316" scaleY="1.1026921194322075" strokeType="OUTSIDE" strokeWidth="0.0" text="Insira o Id ou o Nome do produto para pesquisa-lo no estoque">
+      <font>
+        <Font name="Gadugi" size="15.0" />
+      </font>
+    </Text>
+    <TextArea editable="false" layoutX="14.0" layoutY="115.0" prefWidth="572.0" promptText="id nome setor custo preço data_entrada quantidade data_validade fornecedor defeituoso lote localização" wrapText="true" />
+    <Button font="$x1" layoutX="252.0" layoutY="308.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="97.0" text="Limpar" />
+    <Button font="$x1" layoutX="503.0" layoutY="51.0" minHeight="21.56475830078125" mnemonicParsing="false" onAction="#handlerButtonAction_voltar" prefHeight="36.0" prefWidth="83.0" text="Voltar" />
+  </children>
+</AnchorPane>

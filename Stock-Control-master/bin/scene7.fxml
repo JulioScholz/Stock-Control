@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.StockControll">
+  <children>
+    <TextField layoutX="18.0" layoutY="60.0" prefWidth="105.0" promptText="" />
+    <TextField layoutX="13.0" layoutY="106.0" prefWidth="200.0" promptText="" />
+    <TextField layoutX="219.0" layoutY="106.0" prefWidth="104.9716796875" />
+    <Text fontSmoothingType="LCD" layoutX="71.0" layoutY="98.0" scaleX="2.4370568533552444" scaleY="1.801482697090874" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Objeto:">
+      <font>
+        <Font name="Gadugi" size="10.0" fx:id="x1" />
+      </font>
+    </Text>
+    <TextField layoutX="337.0" layoutY="109.0" prefWidth="70.9578857421875" />
+    <TextField layoutX="433.0" layoutY="106.0" prefWidth="70.9578857421875" />
+    <TextField layoutX="512.0" layoutY="106.0" prefWidth="70.9578857421875" />
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="453.0" layoutY="98.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Custo:" />
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="266.0" layoutY="98.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" />
+    <TextField layoutX="25.0" layoutY="164.0" prefWidth="200.0" />
+    <TextField layoutX="271.0" layoutY="163.0" prefWidth="47.0" promptText="00" />
+    <Text fontSmoothingType="LCD" layoutX="263.0" layoutY="157.0" scaleX="1.6768980007200174" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Dia Entrada">
+      <font>
+        <Font name="Gadugi" size="9.0" fx:id="x2" />
+      </font>
+    </Text>
+    <TextField layoutX="382.0" layoutY="164.0" prefWidth="47.0" promptText="00" />
+    <Text font="$x2" fontSmoothingType="LCD" layoutX="381.0" layoutY="157.0" scaleX="1.5805518583884757" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Mês Entrada" />
+    <TextField layoutX="488.0" layoutY="163.0" prefWidth="47.0" promptText="00" />
+    <Text font="$x2" fontSmoothingType="LCD" layoutX="495.0" layoutY="157.0" scaleX="1.60702051879765" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Ano Entrada" />
+    <TextField layoutX="34.0" layoutY="226.0" prefWidth="200.0" />
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="116.0" layoutY="218.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Lote:" />
+    <TextField layoutX="24.0" layoutY="298.0" prefWidth="200.0" />
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="108.0" layoutY="284.0" scaleX="2.4370568533552444" scaleY="1.6544034316904883" strokeType="OUTSIDE" strokeWidth="0.0" text="Localização:" />
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="531.0" layoutY="98.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Preço:" />
+    <Button layoutX="178.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="106.0303955078125" text="EDITAR">
+      <font>
+        <Font name="Gadugi" size="16.0" fx:id="x3" />
+      </font>
+    </Button>
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="349.0" layoutY="98.0" scaleX="1.5798767117620776" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" />
+    <TextField layoutX="277.0" layoutY="229.0" prefWidth="47.0" promptText="00" />
+    <Text font="$x2" fontSmoothingType="LCD" layoutX="279.0" layoutY="219.0" scaleX="1.6768980007200174" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Dia Validade" />
+    <TextField layoutX="399.0" layoutY="233.0" prefWidth="47.0" promptText="00" />
+    <Text font="$x2" fontSmoothingType="LCD" layoutX="396.0" layoutY="219.0" scaleX="1.5805518583884757" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Mês Validade" />
+    <TextField layoutX="512.0" layoutY="229.0" prefWidth="47.0" promptText="00" />
+    <Text font="$x2" fontSmoothingType="LCD" layoutX="511.0" layoutY="219.0" scaleX="1.60702051879765" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Ano Validade" />
+    <CheckBox layoutX="266.0" layoutY="284.0" mnemonicParsing="false" prefHeight="35.87896728515625" prefWidth="103.24859619140625" text="Defeituoso">
+      <font>
+        <Font name="Gadugi" size="14.0" />
+      </font>
+    </CheckBox>
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="95.0" layoutY="33.0" scaleX="2.4458084817015315" scaleY="1.801482697090874" strokeType="OUTSIDE" strokeWidth="0.0" text="Insira o Id de um objeto" />
+    <Text fontSmoothingType="LCD" layoutX="149.0" layoutY="52.0" scaleX="2.4458084817015315" scaleY="1.801482697090874" strokeType="OUTSIDE" strokeWidth="0.0" text="Opcional, se inserir um id os campos serão preencidos com os dados deste produto">
+      <font>
+        <Font name="Gadugi" size="5.0" />
+      </font>
+    </Text>
+    <Text font="$x1" fontSmoothingType="LCD" layoutX="99.0" layoutY="156.0" scaleX="2.4370568533552444" scaleY="1.8014620305385778" strokeType="OUTSIDE" strokeWidth="0.0" text="Fornecedor:" />
+    <Button font="$x3" layoutX="304.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="141.0" text="CADASTRAR" />
+    <Button font="$x3" layoutX="471.0" layoutY="339.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="106.0303955078125" text="DELETAR" />
+    <Button font="$x3" layoutX="476.0" layoutY="19.0" mnemonicParsing="false" onAction="#handlerButtonAction_voltar" prefHeight="37.0" prefWidth="106.0303955078125" text="VOLTAR" />
+  </children>
+</AnchorPane>

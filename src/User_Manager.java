@@ -9,6 +9,27 @@ public class User_Manager {
 
 
     public void new_user(String username, String password, String type) {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+
+        myStmt = connection.preparedStatement("INSERT INTO USERS (nome, sobrenome, funcao, nascimento, cpf, rg, username, password, level) VALUES" +
+                "(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        myStmt.setString(1, nome);
+        myStmt.setString(2, sobrenome);
+        myStmt.setString(3, funcao);
+        myStmt.setDate(4, java.sql.Date.valueOf(java.time.LocalDate.now()));
+        myStmt.setInt(5, cpf);
+        myStmt.setInt(6, rg);
+        myStmt.setString(7, username);
+        myStmt.setString(8, password);
+        myStmt.setInt(9, level);
+
+        myRs = myStmt.executeUpdate();
+
+        display(myRs);
 
     }
 
@@ -17,10 +38,48 @@ public class User_Manager {
     }
 
     public void edit_user(String username, String password, String type) {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
 
+        myStmt = connection.preparedStatement("UPDATE USERS SET nome = ?, sobrenome = ?, funcao, nascimento = ?" +
+                ", cpf = ?, rg = ?, username = ?, password = ?, level = ? WHERE id = ?");
+
+
+        myStmt.setString(1, nome);
+        myStmt.setString(2, sobrenome);
+        myStmt.setString(3, funcao);
+        myStmt.setDate(4, java.sql.Date.valueOf(java.time.LocalDate.now()));
+        myStmt.setInt(5, cpf);
+        myStmt.setInt(6, rg);
+        myStmt.setString(7, username);
+        myStmt.setString(8, password);
+        myStmt.setInt(9, level);
+        myStmt.setInt(10, id);
+
+        myRs = myStmt.executeUpdate();
+
+        display(myRs);
     }
 
-    public boolean search_user(String username) {
+    /*** a busca tem que ser pelo cpf, por tem de ser uma chave única para a busca e o username pode ser mutável*/                                            
+    public boolean search_user(int cpf) {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+
+        myStmt = connection.preparedStatement("SELECT * FROM users WHERE cpf = ?");
+
+        myStmt.setInt(1, cpf);
+
+        myRs = myStmt.executeQuery();
+
+        if (myRs){
+            return true;
+        }
+
         return false;
     }
 
